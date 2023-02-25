@@ -3,7 +3,7 @@
 elements.meth = {
     color: "#ccffff",
     behavior: behaviors.SOLID,
-    category: "drugs",
+    category: "food",
     viscosity: 100000,
     state: "solid",
     density: 340,
