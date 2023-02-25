@@ -1,22 +1,23 @@
-//this right here gents is a mod
-
+//this right here gents, is a mod!
 // Adding elements:
-elements.mayo = {
-    color: "#ffffff",
+elements.meth = {
+    color: "#ccffff",
+    behavior: behaviors.SOLID,
+    category: "drugs",
+    viscosity: 100000,
+    state: "solid",
+    density: 340,
+};
+
+elements.cocaine = {
+    color: "#f2f2f2",
     behavior: behaviors.LIQUID,
-    category: "liquids",
+    category: "drugs",
     viscosity: 100000,
     state: "liquid",
     density: 720,
 };
 
-// Changing existing elements:
-elements.water.color = "#ff0000";
-elements.water.behavior = behaviors.WALL;
-
-// Removing elements:
-// Be aware, things may break
-delete elements.ketchup;
 
 // Adding behavior presets:
 behaviors.SELFDELETE = [
@@ -36,10 +37,10 @@ behaviors.mud.tick = function(pixel) {
 };
 
 // Create a new tool:
-elements.sand_exploder = {
-    color: "#ff0000",
+elements.trippytool = {
+    color: "#ffe6ff",
     tool: function(pixel) {
-        if (pixel.element == "sand") {
+        if (pixel.element == "cocaine","meth") {
             pixel.element = "explosion"
         }
     },
@@ -63,11 +64,8 @@ runAfterLoad(function() {
 if (enabledMods.includes("test.js")) {
     runAfterLoad(function() {
         // Your code here
-        console.log("Hello World!");
+        console.log("Wassup!");
     });
 }
 
-// Creating eLists:
-eLists.CONDIMENT = ["ketchup","melted_cheese","mayo"];
-// Adding elements to eLists:
-eLists.CONDIMENT.push("honey");
+eLists.DRUGS = ["meth","cocaine"];
